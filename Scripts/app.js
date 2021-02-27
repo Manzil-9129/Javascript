@@ -4,10 +4,11 @@
 //Anonymous Self Executing Function
 (function(){
    var title=document.title;
-   
+   var title=document.title;
 function start(){
  console.log("App Started!");
  console.log("Title: "+title);
+ console.log("Title : "+title);
 }
 
 window.onload=start;
