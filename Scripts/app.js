@@ -3,11 +3,13 @@
 //IIFE-Immediately Invoked Funtion Expression
 //Anonymous Self Executing Function
 
-(function () {
+let app=(function () {
    "use strict"
-
+    //variables
+    let title;
+   
    function AboutButtonClick(event) {
-      console.log("What is the matter");
+      
    }
 
 
@@ -36,7 +38,7 @@
 
       AboutButton.addEventListener("mouseover", Aboutbuttonover);
       AboutButton.addEventListener("mouseout", Aboutbuttonout);
-
+   
    }
 
    function creator1() {
@@ -44,15 +46,67 @@
       let Thispara=document.getElementById("Paragraph");
       ThisButton.innerText="NEXT";
       Thispara.textContent="We will be changing the content of the paragraph throughout the semester";
-      ThisButton.addEventListener("click", Aboutclick);
       
+      //creates an empty array container
+    /*  let Array=[
+       {name:"Manzil",age:"22"},
+       {name:"Manzilpatel",age:"24"},
+       {name:"Manzi",age:"21"}
+      ]
 
+
+      //Array called by creating class content in HTML file inside the 
+      //paragraph
+      let content=document.getElementsByClassName("Content");
+      console.log(Array);
+      console.log(Array.length);*/
+
+      /*for(let index=0;index<=Array.length;index++)
+      {
+         
+         console.log(Array[index].name);
+      }*/
+      
+     /* let index1=0
+      while(index1<=Array.length)
+      {
+         Array[index1].name;
+         console.log(Array[index1].name);
+         index1++;
+      }*/
+
+      /*let myAssociateArray=[];
+      myAssociateArray["Name"]="Tom ";
+      myAssociateArray["age"]=30;
+      console.log(myAssociateArray);
+      console.log(myAssociateArray.Name);*/
+
+     //Asking the message When the Browser loads
+     let decision=confirm("Are you sure")
+     console.log(decision)
+       
+      let myArray=[
+       "Video Games",
+       "Laptop",
+       "Travelling"
+       ];
+      
+       let myFavouritelist=document.getElementById("Favourite Things")
+     
+        myArray.forEach(thing=>
+        {
+      let newItem=document.createElement("li")
+      newItem.textContent=thing;
+      myFavouritelist.appendChild(newItem);
+      console.log(newItem);
+        });
+        ThisButton.addEventListener("click", Aboutclick);
    }
 
 
    function start() {
 
-      let title = document.title;
+      title = document.title;
       
       switch(title)
       { case "Hi":
@@ -71,7 +125,13 @@
    }
 
    console.log("App Started");
+
    }
 
    window.onload = start;
+   return{
+   title:document.title
+
+   };
+   
 })();
